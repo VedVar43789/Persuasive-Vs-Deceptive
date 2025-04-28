@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Vedant Vardhaan</strong> — <em>vvardhaan@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2 style="text-align: center;">
+        <b>Proposition:<br> <br> 
+          <span style="color: #092e78;"><u>Bias Behind the Badge:</u></span> <span style="color: #159fdf;">Examining Racial Representation in CCRB Complaints</span></b>
+    </h2>
+    
+
+      <section>
+        <h3><b><u><span style="color: #7c0e0e;">FOR the Proposition:</u></b></span> <span style="color: #d13131;">Racial Bias exists in CCRB Outcomes</span></h3>
+
+        <figure>
+          <img src="page1_plot1_complaint_vs_population_fixed.png" width="80%" height="600px" alt="" />
+          <figcaption>This bar chart compares the percentage of complaints filed by Black, Hispanic, and White New Yorkers <b>against the NYPD</b> against their population share. It highlights the overrepresentation of Black New Yorkers in filing complaints, with Black individuals filing complaints at a rate 2.1x their population share, indicating potential disparities in policing practices.</figcaption>
+        </figure>
+
+        <p><u>Design Decisions and Rationale:</u></p>
+
+        <ol>
+          <li><b>Grouped Bar Chart for Comparison</b></li>
+          <ul>
+              <li><b>Score:</b> 2 (Fully earnest)</li>
+              <li><b>Rationale:</b> The <b>grouped bar chart</b> provides a clear visual comparison between the percentage of complaints and the percentage of the population for each ethnic group. This format enhances the viewer's ability to <b>compare directly</b> and <b>spot disparities</b> between ethnicities, making the data more <b>intuitive and easy to digest</b>.</li><br>
+          </ul>
+  
+          <li><b>Color Differentiation for Complaints vs Population</b></li>
+          <ul>
+              <li><b>Score:</b> 2 (Fully earnest)</li>
+              <li><b>Rationale:</b> <b>Red for complaints</b> and <b>blue for population</b> clearly differentiate the two variables. This makes it <b>easy to interpret</b> the plot and reinforces the contrast between the actual complaint rates and the population distribution. It avoids visual confusion and makes the data clearer.</li><br>
+          </ul>
+  
+          <li><b>Ratio Annotations for Ethnic Disparities</b></li>
+          <ul>
+              <li><b>Score:</b> 2 (Fully earnest)</li>
+              <li><b>Rationale:</b> Adding <b>ratio annotations</b> like “2.1x” for Black complaints provides a clear quantitative understanding of the disparity between the <b>percentage of complaints</b> and the <b>population share</b>. This <b>directly quantifies</b> the overrepresentation and makes the disparity <b>easier to understand</b>. It strengthens the visualization's persuasive power by adding <b>concrete data</b>.</li><br>
+          </ul>
+      </ol>
+      <br>
+      </section>
+
+      <section>
+        <h3><b><u><span style="color: #0b6347;">Against the Proposition:</u></b></span> <span style="color: #19a056;">Racial Bias exists in CCRB Outcomes</span></h3>
+        <figure>
+          <iframe src="interactive_heatmap_plot_2.html" width="100%" height="600px"></iframe>
+          <figcaption>This heatmap visualizes the distribution of complaint outcomes (e.g., no arrest, summons, or arrest) by ethnicity, illustrating how racial disparities manifest in police interactions and resulting actions. The data shows similar outcomes across racial groups, with minor variations in percentages for each interaction outcome.</figcaption>
+        </figure>
+        
+      
+        <p><u>Design Decisions and Rationale:</u></p>
+
+        <ol>
+          <li><b>Truncating the Y-Axis</b></li>
+          <ul>
+              <li><b>Score:</b> -1 (Deceptive)</li>
+              <li><b>Rationale:</b> Truncating the y-axis to zoom in on values between 20% and 45% exaggerates the disparities by making the differences appear more significant. This gives the impression of a <b>larger racial disparity</b> than the data may actually suggest. A full y-axis would offer a more honest and balanced view of the data.</li><br>
+          </ul>
+  
+          <li><b>Color Scheme Selection</b></li>
+          <ul>
+              <li><b>Score:</b> 2 (Fully earnest)</li>
+              <li><b>Rationale:</b> Using a <b>sequential blue color scale</b> allows for easy identification of percentages and emphasizes <b>gradients</b> in the data. It visually communicates the relative severity of each outcome across ethnicities. The color choice is effective in conveying differences in complaint outcomes without distorting the narrative.</li><br>
+          </ul>
+  
+          <li><b>Including Annotations for Percentages</b></li>
+          <ul>
+              <li><b>Score:</b> 2 (Fully earnest)</li>
+              <li><b>Rationale:</b> Annotating each cell with the percentage of complaints ensures that viewers are informed of the <b>exact data values</b>. This <b>improves transparency</b> and makes the data more accessible, helping viewers to <b>understand the magnitude of differences</b> directly.</li><br>
+          </ul>
+
+          <li><b>Including Only Specific Crimes for Interaction Outcomes</b></li>
+          <ul>
+              <li><b>Score:</b> -2 (Fully deceptive)</li>
+              <li><b>Rationale:</b> Certain crimes that show clear racial disparities in complaint outcomes have been excluded from the analysis. By only including complaints that show similar outcomes across races, the plot gives the misleading impression that there is less racial disparity in police complaints than actually exists. This selective inclusion of data makes the interaction outcomes look more similar across ethnicities, downplaying the real extent of racial bias in policing and complaint outcomes. While the data may be presented more simply, this approach hides important disparities, leading to a misleading narrative that racial bias in police complaints may not be as significant as it truly is.</li><br>
+          </ul>
+      </ol>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+        <p>Creating the visualizations for both plots was a deeply engaging process, as it forced me to make conscious decisions about how to represent sensitive data on racial disparities in police complaints. What came easily was deciding on a clear narrative: showcasing potential <strong>racial bias</strong> through police complaint data and contrasting ethnic groups' experiences. Choosing the most <strong>persuasive design choices</strong>, such as color contrasts, annotations, and clear labeling, helped me structure a meaningful and easily interpretable presentation. However, the difficulty lay in balancing <strong>clarity and transparency</strong> with the desire to <strong>emphasize disparities</strong> without distorting the truth. In <strong>Figure 2</strong>, for instance, the decision to exclude certain crime types, while understandable from a data reduction standpoint, made me question how much context and representation I was willing to compromise to make the plot more focused on racial bias.</p>
+
+        <p>What surprised me the most was how subtle design decisions can <strong>influence perception</strong>. For example, in <strong>Figure 1</strong>, the manipulation of the y-axis range could significantly exaggerate disparities, making it easy for viewers to form conclusions without necessarily engaging with the underlying data in full. This experience has solidified my understanding of <strong>ethical analysis and visualization</strong>. To me, it means representing data in a way that <strong>prioritizes transparency</strong> while allowing for persuasive storytelling, but never at the cost of truth. <strong>Ethical visualizations</strong> should avoid <strong>selective data representation</strong> and should always provide enough context for the viewer to understand the significance of the patterns they're being shown.</p>
+    
+        <p>The line between <strong>acceptable persuasive choices</strong> and <strong>misleading ones</strong> is often thin, and the ethical boundaries can feel ambiguous. I think persuasive choices become <strong>misleading</strong> when they <strong>intentionally skew the message</strong> by manipulating the data's scale, omitting critical context, or using visual tricks that misrepresent the real picture. In my case, <strong>Figure 2</strong> is a good example of where <strong>selective exclusion</strong> of data points could be perceived as subtly misleading, while <strong>Figure 1</strong> is a clearer example of how manipulating visual elements like the y-axis range can drastically change the interpretation of the data. Ultimately, I believe <strong>honesty</strong> and <strong>full transparency</strong> are the keys to making visualizations both persuasive and ethically sound.</p>
+    
+
+      </section>
+    </main>
+  </body>
+</html>
